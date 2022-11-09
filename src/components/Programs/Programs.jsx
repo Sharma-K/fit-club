@@ -1,7 +1,8 @@
 import React from 'react'
 import './Programs.css'
-import {prorgamsData} from '../../data/programsData';
-
+import RightArrows from "../../assets/rightArrow.png"
+import { programsData } from '../../data/programsData';
+{console.log(programsData)};
 const Programs = () =>{
 
     return(
@@ -10,6 +11,22 @@ const Programs = () =>{
             <span  className='stroke-text'>Explore our</span>
             <span>Programs</span>
             <span className='stroke-text'>to shape you</span>
+        </div>
+
+        <div className="program-categories">
+            { programsData.map((program)=>( 
+    
+                <div className="category">
+                    {program.image}
+                    <span>{program.heading}</span>
+                    <span>{program.details}</span>
+                    <div className="join-now">
+                        <span>Join Now</span>
+                        <img src={RightArrows} alt="" />
+                    </div>
+                </div>
+                
+            )) }
         </div>
     </div>
     );
