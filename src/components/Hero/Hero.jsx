@@ -8,6 +8,7 @@ import Calories from "../../assets/calories.png"
 import { motion } from 'framer-motion';
 const Hero = () => {
 
+    const mobile = window.innerWidth<=780?true:false;
     const transition  = {type: 'spring', duration: 3}
     return (
         <div className='hero'>
@@ -17,7 +18,7 @@ const Hero = () => {
                 
                 <div className="the-best-ad">
                     <motion.div
-                      initial = {{left: '238px'}}
+                      initial = {{left:mobile? '178px':'238px'}}
                       whileInView = {{left: '8px'}}
                       transition={{...transition, type: 'tween'}}
                     ></motion.div>
